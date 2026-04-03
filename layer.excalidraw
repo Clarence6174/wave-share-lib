@@ -1,0 +1,266 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "id": "outer_box",
+      "type": "rectangle",
+      "x": 20, "y": 20,
+      "width": 760, "height": 540,
+      "strokeColor": "#0ea5e9",
+      "backgroundColor": "#f0f9ff",
+      "roughness": 1,
+      "roundness": { "type": 3 },
+      "opacity": 40
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "x": 180, "y": 36,
+      "width": 440, "height": 36,
+      "text": "WaveShare Runtime",
+      "fontSize": 24,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "strokeColor": "#0369a1",
+      "backgroundColor": "transparent"
+    },
+    {
+      "id": "layer1_box",
+      "type": "rectangle",
+      "x": 60, "y": 100,
+      "width": 680, "height": 80,
+      "strokeColor": "#7c3aed",
+      "backgroundColor": "#ede9fe",
+      "roughness": 1,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "layer1_step",
+      "type": "text",
+      "x": 80, "y": 112,
+      "width": 60, "height": 30,
+      "text": "①",
+      "fontSize": 22,
+      "fontFamily": 1,
+      "strokeColor": "#5b21b6"
+    },
+    {
+      "id": "layer1_title",
+      "type": "text",
+      "x": 120, "y": 112,
+      "width": 300, "height": 24,
+      "text": "BLE Layer  (bleak)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#5b21b6"
+    },
+    {
+      "id": "layer1_desc",
+      "type": "text",
+      "x": 120, "y": 138,
+      "width": 580, "height": 20,
+      "text": "BleakScanner listens for WAVESHARE_SERVICE_UUID  →  extracts {\"ip\": \"...\", \"port\": N} from advertisement payload  →  builds Peer object",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#6d28d9"
+    },
+    {
+      "id": "arrow1",
+      "type": "arrow",
+      "x": 400, "y": 180,
+      "width": 0, "height": 40,
+      "strokeColor": "#7c3aed",
+      "points": [[0,0],[0,40]],
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "arrow1_label",
+      "type": "text",
+      "x": 410, "y": 190,
+      "width": 140, "height": 20,
+      "text": "Peer { ip, port }",
+      "fontSize": 12,
+      "fontFamily": 1,
+      "strokeColor": "#7c3aed"
+    },
+    {
+      "id": "layer2_box",
+      "type": "rectangle",
+      "x": 60, "y": 220,
+      "width": 680, "height": 80,
+      "strokeColor": "#0891b2",
+      "backgroundColor": "#cffafe",
+      "roughness": 1,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "layer2_step",
+      "type": "text",
+      "x": 80, "y": 232,
+      "width": 60, "height": 30,
+      "text": "②",
+      "fontSize": 22,
+      "fontFamily": 1,
+      "strokeColor": "#0e7490"
+    },
+    {
+      "id": "layer2_title",
+      "type": "text",
+      "x": 120, "y": 232,
+      "width": 340, "height": 24,
+      "text": "TCP Handshake  (asyncio)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#0e7490"
+    },
+    {
+      "id": "layer2_desc",
+      "type": "text",
+      "x": 120, "y": 258,
+      "width": 580, "height": 20,
+      "text": "asyncio.open_connection(ip, port)  →  send WAVESHARE\\x00 magic  +  length-prefixed JSON header (filename, size, mimetype)",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#0e7490"
+    },
+    {
+      "id": "arrow2",
+      "type": "arrow",
+      "x": 400, "y": 300,
+      "width": 0, "height": 40,
+      "strokeColor": "#0891b2",
+      "points": [[0,0],[0,40]],
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "arrow2_label",
+      "type": "text",
+      "x": 410, "y": 310,
+      "width": 200, "height": 20,
+      "text": "connection established",
+      "fontSize": 12,
+      "fontFamily": 1,
+      "strokeColor": "#0891b2"
+    },
+    {
+      "id": "layer3_box",
+      "type": "rectangle",
+      "x": 60, "y": 340,
+      "width": 680, "height": 80,
+      "strokeColor": "#059669",
+      "backgroundColor": "#d1fae5",
+      "roughness": 1,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "layer3_step",
+      "type": "text",
+      "x": 80, "y": 352,
+      "width": 60, "height": 30,
+      "text": "③",
+      "fontSize": 22,
+      "fontFamily": 1,
+      "strokeColor": "#065f46"
+    },
+    {
+      "id": "layer3_title",
+      "type": "text",
+      "x": 120, "y": 352,
+      "width": 400, "height": 24,
+      "text": "Chunk Stream  (asyncio StreamWriter)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#065f46"
+    },
+    {
+      "id": "layer3_desc",
+      "type": "text",
+      "x": 120, "y": 378,
+      "width": 580, "height": 20,
+      "text": "[ 4-byte big-endian len | 256 KiB chunk bytes ] × N   +   [ len=0 ] EOF sentinel   |   tqdm progress bar",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#065f46"
+    },
+    {
+      "id": "arrow3",
+      "type": "arrow",
+      "x": 400, "y": 420,
+      "width": 0, "height": 40,
+      "strokeColor": "#059669",
+      "points": [[0,0],[0,40]],
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "arrow3_label",
+      "type": "text",
+      "x": 410, "y": 430,
+      "width": 160, "height": 20,
+      "text": "all bytes delivered",
+      "fontSize": 12,
+      "fontFamily": 1,
+      "strokeColor": "#059669"
+    },
+    {
+      "id": "layer4_box",
+      "type": "rectangle",
+      "x": 60, "y": 460,
+      "width": 680, "height": 80,
+      "strokeColor": "#dc2626",
+      "backgroundColor": "#fee2e2",
+      "roughness": 1,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "layer4_step",
+      "type": "text",
+      "x": 80, "y": 472,
+      "width": 60, "height": 30,
+      "text": "④",
+      "fontSize": 22,
+      "fontFamily": 1,
+      "strokeColor": "#991b1b"
+    },
+    {
+      "id": "layer4_title",
+      "type": "text",
+      "x": 120, "y": 472,
+      "width": 400, "height": 24,
+      "text": "SHA-256 Integrity  (hashlib)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#991b1b"
+    },
+    {
+      "id": "layer4_desc",
+      "type": "text",
+      "x": 120, "y": 498,
+      "width": 580, "height": 20,
+      "text": "sender sends hex digest  →  receiver independently computes digest  →  match: reply OK + TransferResult  |  mismatch: reply ER + raise IntegrityError",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#991b1b"
+    },
+    {
+      "id": "note",
+      "type": "text",
+      "x": 60, "y": 556,
+      "width": 680, "height": 20,
+      "text": "⚠  BLE carries only peer metadata (ip + port).  All file bytes travel over TCP for maximum throughput.",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#92400e",
+      "backgroundColor": "transparent",
+      "textAlign": "center"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f8fafc",
+    "gridSize": null
+  }
+}
