@@ -1,4 +1,4 @@
-# 🌊 WaveShare
+#  WaveShare
 
 > Peer-to-peer file transfer for humans. BLE discovery. TCP speed. Zero cloud.
 
@@ -20,12 +20,12 @@ It uses **Bluetooth Low Energy** (BLE) for zero-config peer discovery and a
 
 | Capability | Detail |
 |---|---|
-| 🔵 **BLE discovery** | `bleak`-powered scan — finds peers in seconds |
-| ⚡ **Fast TCP stream** | Chunk-based transfer, saturates your local link |
-| 🔒 **Integrity check** | SHA-256 digest verified before the receiver confirms |
-| 📋 **Share sheet hook** | `get_share_intent()` → drop-in for Android / iOS share menus |
-| 🔍 **Async file scan** | Non-blocking directory traversal via `asyncio.to_thread` |
-| 📦 **Modern packaging** | `hatchling` + `pyproject.toml`, typed, zero `setup.py` |
+|  **BLE discovery** | `bleak`-powered scan — finds peers in seconds |
+|  **Fast TCP stream** | Chunk-based transfer, saturates your local link |
+|  **Integrity check** | SHA-256 digest verified before the receiver confirms |
+|  **Share sheet hook** | `get_share_intent()` → drop-in for Android / iOS share menus |
+|  **Async file scan** | Non-blocking directory traversal via `asyncio.to_thread` |
+|  **Modern packaging** | `hatchling` + `pyproject.toml`, typed, zero `setup.py` |
 
 ---
 
