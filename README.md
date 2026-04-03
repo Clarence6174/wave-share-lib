@@ -136,12 +136,12 @@ async with WaveShareManager("Alice") as mgr:
 
 ## Layer diagram
 
-[`docs/layer.excalidraw`](docs/layer.excalidraw)
+[`docs/layer.excalidraw`](./layer.excalidraw.png)
 
 ### Excalidraw diagram
 
 An interactive architecture diagram is available in the repository:  
-📐 [`docs/architecture.excalidraw`](docs/architecture.excalidraw)
+📐 [`docs/architecture.excalidraw`](./architecture.excalidraw.png)
 
 
 ### Layer breakdown
