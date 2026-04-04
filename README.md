@@ -2,7 +2,7 @@
 
 > Peer-to-peer file transfer for humans. BLE discovery. TCP speed. Zero cloud.
 
-[![PyPI version](https://img.shields.io/pypi/v/waveshare?color=0ea5e9&style=flat-square)](https://pypi.org/project/waveshare/)
+[![PyPI version](https://shields.io)](https://pypi.org/project/waveshare-p2plib/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-0ea5e9?style=flat-square)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-22c55e?style=flat-square)](LICENSE)
 [![Tests](https://img.shields.io/github/actions/workflow/status/your-org/waveshare/tests.yml?style=flat-square&label=tests)](https://github.com/your-org/waveshare/actions)
@@ -33,10 +33,11 @@ It uses **Bluetooth Low Energy** (BLE) for zero-config peer discovery and a
 
 ```bash
 # Core library (no Bluetooth)
-pip install waveshare
+pip install waveshare-p2plib
+
 
 # With BLE peer discovery
-pip install "waveshare[ble]"
+pip install "waveshare-p2plib[ble]"
 ```
 
 **System requirements for BLE:**
@@ -58,7 +59,8 @@ pip install "waveshare[ble]"
 
 ```python
 import asyncio
-from waveshare import WaveShareManager
+from waveshare-p2plib
+ import WaveShareManager
 
 async def main():
     async with WaveShareManager("Alice") as mgr:
@@ -81,7 +83,7 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from waveshare import WaveShareManager
+from waveshare-p2plib import WaveShareManager
 
 async def main():
     async with WaveShareManager("Bob") as mgr:
@@ -95,7 +97,7 @@ asyncio.run(main())
 ### Share sheet integration
 
 ```python
-from waveshare import WaveShareManager
+from waveshare-p2plib import WaveShareManager
 
 mgr = WaveShareManager("Alice")
 intent = mgr.get_share_intent("report.pdf")
@@ -114,7 +116,7 @@ print(intent)
 
 ```python
 import asyncio
-from waveshare import WaveShareManager
+from wavesharep2plib import WaveShareManager
 
 async def main():
     async with WaveShareManager("Alice") as mgr:
@@ -204,7 +206,7 @@ Peer(device_id, name, address, port, rssi=None)
 Immutable dataclass. Create manually for TCP-only usage (no BLE required):
 
 ```python
-from waveshare import Peer
+from waveshare-p2plib import Peer
 bob = Peer("manual", "Bob", "192.168.1.42", 9000)
 ```
 
@@ -221,7 +223,7 @@ bob = Peer("manual", "Bob", "192.168.1.42", 9000)
 ## Development
 
 ```bash
-git clone https://github.com/your-org/waveshare
+git clone https://github.com/Clarence6174/waveshare
 cd waveshare
 pip install -e ".[dev,ble]"
 

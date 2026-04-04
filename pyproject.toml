@@ -5,12 +5,16 @@ build-backend = "hatchling.build"
 # ── Project metadata ─────────────────────────────────────────────────────────
 
 [project]
-name        = "waveshare"
+name        = "waveshare-p2plib"
 version     = "0.1.0"
 description = "Peer-to-peer file transfer over BLE discovery + TCP stream."
 readme      = "README.md"
 license     = { file = "LICENSE" }
 requires-python = ">=3.10"
+
+authors = [
+    { name = "Chinemerem Madu", email = "your-email@example.com" },
+]
 
 keywords = ["p2p", "bluetooth", "ble", "file-transfer", "asyncio", "networking"]
 
@@ -49,25 +53,25 @@ dev  = [
 ]
 
 [project.urls]
-Homepage      = "https://github.com/your-org/waveshare"
-Documentation = "https://waveshare.readthedocs.io"
-Repository    = "https://github.com/your-org/waveshare"
-"Bug Tracker" = "https://github.com/your-org/waveshare/issues"
-Changelog     = "https://github.com/your-org/waveshare/blob/main/CHANGELOG.md"
+Homepage      = "https://github.com/Clarence6174/waveshare"
+Documentation = "https://github.com"
+Repository    = "https://github.com/Clarence6174/waveshare"
+"Bug Tracker" = "https://github.com/Clarence6174/waveshare/issues"
+Changelog     = "https://github.com/Clarence6174/waveshare/blob/main/CHANGELOG.md"
 
 # ── Hatch configuration ──────────────────────────────────────────────────────
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/waveshare"]
+packages = ["waveshare"]
 
 [tool.hatch.envs.default]
-dependencies = ["waveshare[dev,ble]"]
+features = ["ble", "dev"]
 
 [tool.hatch.envs.default.scripts]
 test  = "pytest tests/ -v --cov=waveshare --cov-report=term-missing {args}"
-lint  = "ruff check src/ tests/"
-fmt   = "ruff format src/ tests/"
-types = "mypy src/waveshare"
+lint  = "ruff check waveshare/ tests/"
+fmt   = "ruff format waveshare/ tests/"
+types = "mypy waveshare"
 
 # ── Tool configurations ──────────────────────────────────────────────────────
 
@@ -79,6 +83,7 @@ addopts      = "-ra -q"
 [tool.ruff]
 line-length    = 99
 target-version = "py310"
+src = ["waveshare"]
 select         = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.mypy]
